@@ -36,8 +36,8 @@ public:
         float ILevelMult = 0.5 + (((float)(item->GetTemplate()->ItemLevel))/100.0);
 		if ((Quality > 5 && Quality < 0)/*eliminates enchanting anything that isn't a recognized quality*/ || (Class != 2 && Class != 4 /*&& Class != 1*/)/*eliminates enchanting anything but weapons/armor*/)
 			return;
-		int slotRand[5] = { -1, -1, -1/* , -1, -1*/};
-		uint32 slotEnch[5] = { 0, 1, 5 /*, 4, 3*/};
+		int slotRand[3] = { -1, -1, -1/* , -1, -1*/};
+		uint32 slotEnch[3] = { 0, 1, 5 /*, 4, 3*/};
 		double roll = rand_chance();
 		if (roll <= (Quality+1)*25 * ILevelMult)
 			slotRand[0] = getRandEnchantment(item);
